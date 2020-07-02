@@ -86,11 +86,8 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  if foods.include?("うに")
-    puts "好物です"
-  else
-    puts "まぁまぁ好きです"
-  end
+  foods = foods.include?("うに") ? "好物です" : "まぁまぁ好きです"
+  puts foods
 end
 
 def q11
@@ -107,6 +104,8 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
+  data.flatten!
+  puts data
 
 end
 
