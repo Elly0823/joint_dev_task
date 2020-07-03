@@ -104,8 +104,8 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  data.flatten!
-  puts data
+  p data.dig(:user, :name)
+  
 
 end
 
@@ -114,6 +114,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
+  user_data = user_data.merge!(update_data)
+  p user_data
 
 end
 
@@ -121,7 +123,7 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  p data.keys
 end
 
 def q15
@@ -129,7 +131,17 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-
+  data = [
+    { name: "saitou", hobby: "soccer", age: 33, role: "admin" },
+    { name: "yamada", hobby: "baseball", role: "normal" }
+  ]
+  data.each do |data|
+    if data.key?(:age) 
+      p "OK"
+    else
+      p "NG"
+    end
+  end
 end
 
 def q16
@@ -141,7 +153,9 @@ def q16
   ]
 
   # 以下に回答を記載
-
+  users.each do |user|
+    p "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  end
 end
 
 class UserQ17
