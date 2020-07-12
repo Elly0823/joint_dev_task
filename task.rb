@@ -177,6 +177,26 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
+
+  def introduce
+    if @age >= 20
+      puts "こんにちは,#{name}と申します。宜しくお願いいたします。"
+    else
+      puts "はいさいまいど〜，#{name}です！！！"
+    end
+  end
+
+  def name
+    @name
+  end
+
+  def age
+    @age
+  end
 
 end
 
@@ -192,9 +212,14 @@ end
 class Item
   # 以下を修正して下さい
 
-  def initialize(name)
+  def initialize(name:)
     @name = name
   end
+
+  def name
+    @name
+  end
+
 end
 
 def q19
