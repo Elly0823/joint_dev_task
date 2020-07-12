@@ -184,20 +184,11 @@ class UserQ18
 
   def introduce
     if @age >= 20
-      puts "こんにちは,#{name}と申します。宜しくお願いいたします。"
+      puts "こんにちは,#{@name}と申します。宜しくお願いいたします。"
     else
-      puts "はいさいまいど〜，#{name}です！！！"
+      puts "はいさいまいど〜，#{@name}です！！！"
     end
   end
-
-  def name
-    @name
-  end
-
-  def age
-    @age
-  end
-
 end
 
 def q18
@@ -211,15 +202,10 @@ end
 
 class Item
   # 以下を修正して下さい
-
-  def initialize(name:)
+  attr_reader :name
+  def initialize(name)
     @name = name
   end
-
-  def name
-    @name
-  end
-
 end
 
 def q19
@@ -237,7 +223,6 @@ class Zoo
   # 以下に回答を記載
 
 end
-
 
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
